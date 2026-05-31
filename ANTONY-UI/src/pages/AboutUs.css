@@ -1,0 +1,81 @@
+/* ==========================================
+   🏢 ABOUT US PAGE STYLES
+   ========================================== */
+.about-container {
+  padding: 6rem 2rem 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.about-main-desc {
+  font-size: 1.15rem;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.about-section-heading {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* 3-Pillars Responsive Layout Grid */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.about-pillar-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Color-coded feature borders */
+.pillar-design { border-top: 4px solid #e27d24; }
+.pillar-security { border-top: 4px solid #007bff; }
+.pillar-utilities { border-top: 4px solid #28a745; }
+
+.about-pillar-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.about-pillar-card p {
+  margin: 0;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+/* Bottom CTA Callout Panel */
+.about-cta-banner {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: #1e293b;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.about-cta-banner h3 {
+  margin: 0 0 0.5rem 0;
+  color: #e27d24;
+}
+
+.about-cta-banner p {
+  margin: 0;
+  color: #cbd5e1;
+}

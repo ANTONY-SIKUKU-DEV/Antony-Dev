@@ -1,0 +1,90 @@
+.Dashboard{
+    Display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    column-gap: 2.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background-color: transparent; 
+    z-index: 1000; /* Ensures the dashboard stays on top of other content */
+}
+.Antony {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;    
+}
+.Antony input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;     
+}
+.Buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.6rem;
+    align-items: center;
+    justify-content: center; 
+    color: #FEFEFE;    
+}
+.Buttons button {
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.Buttons button:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+.Buttons button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
+}
+
+   /*MOBILE & ZOOM RESPONSIVENESS FORTHE DASHBOARD HEADER BAR*/   
+@media (max-width: 768px) {
+    .Dashboard {
+        /* Allow the bar to grow vertically instead of locking a fixed desktop height */
+        position: fixed; 
+        flex-direction: column; /* Stack logo/search row over the navigation links */
+        gap: 0.8rem; /* Squeezes down that huge 2.5rem gap so it fits the screen */
+        padding: 0.8rem;
+        background-color: #ffffff; /* Gives it a solid background so content doesn't bleed under it */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .Antony {
+        width: 100%;
+        justify-content: space-between; /* Keeps brand title and search cleanly balanced */
+        gap: 0.5rem;
+    }
+
+    .Antony input {
+        width: 140px; /* Restricts input scale so it doesn't smash the title text */
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+
+    .Buttons {
+        width: 100%;
+        flex-wrap: wrap; /* 🔑 IMPORTANT: Allows links to cleanly flow to a second line instead of running off-screen */
+        column-gap: 0.5rem;
+        row-gap: 0.4rem;
+    }
+
+    .Buttons button {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem; /* Scales action buttons slightly down for mobile fingers */
+    }
+}

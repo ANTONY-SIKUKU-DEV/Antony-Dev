@@ -1,0 +1,150 @@
+.notifications-page-wrapper {
+  width: 100vw;
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligns to top so longer lists scroll naturally */
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  padding: 3rem 0;
+}
+
+.notifications-container {
+  width: 50%;  
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* Header Action Layout Row */
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bell-icon {
+  font-size: 1.4rem;
+  color: #4a5568;
+}
+
+.header-title h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0;
+}
+
+.notification-badge {
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.clear-all-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-all-btn:hover {
+  text-decoration: underline;
+}
+
+/* Feed List Stack Container */
+.notifications-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual Alert Item Block */
+.notification-item {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #edf2f7;
+  position: relative;
+  align-items: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+  background-color: #f7fafc;
+}
+
+/* Color Coding and Left Accent Border for Unread States */
+.notification-item.unread {
+  background-color: #fafdff; /* Slightly different tint for new alerts */
+}
+
+.success-type.unread { border-left: 4px solid #48bb78; }
+.warning-type.unread { border-left: 4px solid #ecc94b; }
+.info-type.unread { border-left: 4px solid #007bff; }
+
+/* Read State (Grayed out) */
+.notification-item.read-type {
+  border-left: 4px solid #cbd5e0;
+  opacity: 0.75;
+}
+
+/* Icons styling by context category */
+.success-type .notification-icon-wrapper { color: #48bb78; font-size: 1.3rem; }
+.warning-type .notification-icon-wrapper { color: #ecc94b; font-size: 1.3rem; }
+.info-type .notification-icon-wrapper { color: #007bff; font-size: 1.3rem; }
+.read-type .notification-icon-wrapper { color: #a0aec0; font-size: 1.3rem; }
+
+/* Content block text typography */
+.notification-content {
+  flex: 1;
+  text-align: left;
+}
+
+.notification-content h4 {
+  font-size: 1.05rem;
+  color: #2d3748;
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+}
+
+.notification-content p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  display: block;
+}
+
+/* Clean Context Trash Actions */
+.delete-notification-btn {
+  background: none;
+  border: none;
+  color: #cbd5e0;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.delete-notification-btn:hover {
+  color: #e53e3e; /* Turns warning red on focus hover actions */
+}

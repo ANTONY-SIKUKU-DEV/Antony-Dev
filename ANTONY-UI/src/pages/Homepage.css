@@ -1,0 +1,195 @@
+/* Base container holding both elements in standard scrolling flow */
+.home-outer-container {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 2.8rem;
+}
+
+/* 📐 WELCOME SPLIT SECTION STYLE */
+.home-welcome-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3.5rem 1rem 3.5rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  
+  /* Create a view timeline tracking this section's movement on scroll */
+  view-timeline-name: --headerScroll;
+  view-timeline-axis: block;
+}
+
+.welcome-split-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 3.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  
+  /* Applies a dynamic zoom-out effect as it scrolls out of view */
+  animation: dynamicZoomOut linear both;
+  animation-timeline: --headerScroll;
+  animation-range: exit 0% exit 100%;
+}
+
+.welcome-left-content {
+  flex: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.welcome-main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.welcome-detailed-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444444;
+  margin: 0;
+}
+
+/* High-contrast corporate right card box */
+.welcome-right-card {
+  flex: 0.8;
+  background-color: #e27d24; /* Change this hex code to match your exact signature orange */
+  color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 10px 25px rgba(226, 125, 36, 0.15);
+}
+
+.welcome-right-card h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.card-address {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.card-contact-lines p {
+  font-size: 0.9rem;
+  margin: 0.6rem 0;
+  font-weight: 500;
+}
+
+/* 🎥 Dynamic Zoom-Out Scroll Keyframe */
+@keyframes dynamicZoomOut {
+  to {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+}
+
+
+/* =============================================================
+   🏠 COPIED DIRECTLY: YOUR EXACT ORIGINAL PROPERTY CARDS CSS 
+   ============================================================= */
+.home-content-wrapper {
+  margin-top: 80px;
+  width: 95vw;
+  margin-left: 2rem;
+  margin-right: 5rem;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(35vh, 1fr));  
+  column-gap: 2rem;  
+  align-items: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Light background contrast for the main section */
+}
+
+.property-card {
+  max-width: 30vw;   
+  max-height: 40vw;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; 
+  margin-top: 1rem;
+  animation: revealCard 0.9s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+@keyframes revealCard {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+  }
+}
+
+.home-hero-asset {
+  width: 100%;
+  height: 30vh; 
+  object-fit: cover; 
+  display: block;
+}
+
+.property-details {
+  padding: 1rem;
+  text-align: left; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.property-title {
+  font-size: 0.9rem;
+  color: #222222;
+  margin: 0;
+}
+
+.property-price {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #007bff; 
+}
+
+.property-location {
+  font-size: 0.7rem;
+  color: #666666;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.property-description {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: #444444;
+  margin-bottom: 1rem;
+}
+
+.property-features {
+  display: flex;
+  gap: 1rem;
+  color: #777777;
+  font-weight: 500;
+  border-top: 0.4px solid #eeeeee;
+  padding-top: 0.6rem;
+}
