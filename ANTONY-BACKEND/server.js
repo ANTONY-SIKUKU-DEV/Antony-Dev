@@ -362,6 +362,15 @@ app.post('/api/change-password', async (req, res) => {
 // Change this block at the bottom from process.env.PORT to a direct fallback configuration:
 const PORT = 5000; 
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`📡 Server actively streaming on http://localhost:${PORT}`);
-});
+// Change the hardcoded port listener block to this:
+const PORT = process.env.PORT || 5000; 
+
+// Keep the local listener wrapper active for your desktop terminal runs
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`📡 Server actively streaming locally on http://localhost:${PORT}`);
+  });
+}
+
+// 🚀 CRUCIAL FOR VERCEL: Export the app module instance
+module.exports = app;
