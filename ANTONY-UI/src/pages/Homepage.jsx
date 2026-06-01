@@ -5,12 +5,9 @@ import { propertyData } from '../data/properties' // 📦 Import your new array 
 
 export function Homepage() {
   return (
-    <div className="home-outer-container">
-      
-      {/* 🌟 SPLIT HERO SECTION */}
+    <div className="home-outer-container">    
       <div className="home-welcome-section">
-        <div className="welcome-split-wrapper">          
-          
+        <div className="welcome-split-wrapper">           
           <div className="welcome-left-content">
             <h1 className="welcome-main-title">
               Welcome to Elite Residence, the fastest growing real estate company in Mombasa!
@@ -23,8 +20,7 @@ export function Homepage() {
               place to live, you have found your perfect home.
             </p>
           </div>
-
-          {/* Right Info Card Block */}
+          
           <div className="welcome-right-card">
             <h3>Elite Residence Real Estate</h3>
             <p className="card-address">
@@ -40,29 +36,24 @@ export function Homepage() {
 
         </div>
       </div>
-
-      {/* 🏠 YOUR DYNAMIC PROPERTY CARDS GRID */}
+      
       <div className="home-content-wrapper">
         {propertyData.map((house) => (
           <div key={house.id} className="property-card">
             <Link to={`/property/${house.id}`}>
             <img src={house.image} alt={house.title} className="home-hero-asset" />
             </Link>            
-            {/* Details section */}
             <div className="property-details">
               <div className="property-header">
                 <h2 className="property-title">{house.title}</h2>
                 <span className="property-price">{house.price}</span>
-              </div>
-              
+              </div>              
               <p className="property-location">
                 <span className="location-icon">📍</span> {house.location}
-              </p>
-              
+              </p>              
               <p className="property-description">
                 {house.description}
-              </p>
-              
+              </p>              
               <div className="property-features">
                 <span>• {house.bedrooms} Bedrooms</span>
                 <span>• {house.bathrooms} Bathrooms</span>
@@ -72,7 +63,6 @@ export function Homepage() {
           </div> 
         ))}
       </div>
-
     </div>
   )
 }

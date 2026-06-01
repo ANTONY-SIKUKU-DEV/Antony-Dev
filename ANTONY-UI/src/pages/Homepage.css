@@ -1,11 +1,9 @@
-/* Base container holding both elements in standard scrolling flow */
 .home-outer-container {
   width: 100%;
   box-sizing: border-box;
   margin-top: 2.8rem;
 }
 
-/* 📐 WELCOME SPLIT SECTION STYLE */
 .home-welcome-section {
   width: 100%;
   display: flex;
@@ -13,9 +11,7 @@
   justify-content: center;
   padding: 4rem 3.5rem 1rem 3.5rem;
   box-sizing: border-box;
-  background-color: #ffffff;
-  
-  /* Create a view timeline tracking this section's movement on scroll */
+  background-color: #ffffff;  
   view-timeline-name: --headerScroll;
   view-timeline-axis: block;
 }
@@ -27,9 +23,7 @@
   gap: 3.5rem;
   align-items: flex-start;
   justify-content: space-between;
-  text-align: left;
-  
-  /* Applies a dynamic zoom-out effect as it scrolls out of view */
+  text-align: left; 
   animation: dynamicZoomOut linear both;
   animation-timeline: --headerScroll;
   animation-range: exit 0% exit 100%;
@@ -57,10 +51,9 @@
   margin: 0;
 }
 
-/* High-contrast corporate right card box */
 .welcome-right-card {
   flex: 0.8;
-  background-color: #e27d24; /* Change this hex code to match your exact signature orange */
+  background-color: #e27d24;
   color: #ffffff;
   padding: 2.5rem;
   border-radius: 4px;
@@ -88,7 +81,6 @@
   font-weight: 500;
 }
 
-/* 🎥 Dynamic Zoom-Out Scroll Keyframe */
 @keyframes dynamicZoomOut {
   to {
     transform: scale(0.92);
@@ -96,10 +88,6 @@
   }
 }
 
-
-/* =============================================================
-   🏠 COPIED DIRECTLY: YOUR EXACT ORIGINAL PROPERTY CARDS CSS 
-   ============================================================= */
 .home-content-wrapper {
   margin-top: 80px;
   width: 95vw;
@@ -112,7 +100,7 @@
   align-items: center;
   padding: 2rem 0;
   box-sizing: border-box;
-  background-color: #f8f9fa; /* Light background contrast for the main section */
+  background-color: #f8f9fa;
 }
 
 .property-card {

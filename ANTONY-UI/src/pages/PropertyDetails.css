@@ -81,7 +81,6 @@
   margin-bottom: 1.8rem;
 }
 
-/* Feature Grid Rows */
 .details-specs-pill-box {
   display: flex;
   gap: 1rem;
@@ -115,7 +114,6 @@
   font-size: 1.05rem;
 }
 
-/* Extra Info List Styling */
 .details-extra-amenities {
   background: #f8f9fa;
   padding: 1.5rem;
@@ -139,7 +137,6 @@
   font-size: 0.95rem;
 }
 
-/* Action Trigger */
 .details-book-viewing-btn {
   width: 100%;
   background-color: #e27d24;

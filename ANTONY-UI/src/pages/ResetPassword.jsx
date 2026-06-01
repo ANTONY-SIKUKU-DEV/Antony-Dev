@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import './ForgotPassword.css'; // Reusing your clean orange-accent styles!
+import './ForgotPassword.css'; 
 
 function ResetPassword() {
-  const { token } = useParams(); // 🔐 Automatically grabs the dynamic token string from the browser URL
+  const { token } = useParams(); 
   const navigate = useNavigate();
-
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -15,8 +14,6 @@ function ResetPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Front-end sanity check: Make sure passwords match before hitting the network
     if (password !== confirmPassword) {
       return setError('Passwords do not match. Please retype carefully.');
     }
@@ -26,13 +23,10 @@ function ResetPassword() {
     setError('');
 
     try {
-      // Post the fresh payload directly to your backend endpoint with the parameter token
       const response = await axios.post(`http://localhost:5000/api/reset-password/${token}`, { password });
       setMessage(response.data.message);
       setPassword('');
       setConfirmPassword('');
-
-      // Redirect them straight to login after 3 seconds so they can test their new access
       setTimeout(() => {
         navigate('/login');
       }, 3000);

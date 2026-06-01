@@ -52,13 +52,10 @@ export function SignupPage() {
         <p>Join Elite Residential Housing to find and manage your perfect home</p>
 
         <form onSubmit={handleSignup} className="signup-form">
-          {/* Full Name Input */}
           <div className="input-group">
             <span className="input-icon"><FaUser /></span>
             <input type="text" placeholder="Full Name" required onChange={(e) => setFullName(e.target.value)} />
           </div>
-
-          {/* Email Input */}
           <div className="input-group">
             <span className="input-icon"><FaEnvelope /></span>
             <input type="email" placeholder="Email Address" required onChange={(e) => setEmail(e.target.value)} />
@@ -68,8 +65,6 @@ export function SignupPage() {
            </div>
           )}
           </div>
-
-          {/* Password Input */}
           <div className="input-group password-group">
             <span className="input-icon"><FaLock /></span>
             <input type={showPassword ? "text" : "password"} placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
@@ -77,8 +72,6 @@ export function SignupPage() {
               <FaEye />
             </button>
           </div>
-
-          {/* Confirm Password Input */}
           <div className="input-group password-group">
             <span className="input-icon"><FaLock /></span>
             <input type={showPassword ? "text" : "password"} placeholder="Confirm Password" required onChange={(e) => setConfirmPassword(e.target.value)} />
@@ -86,15 +79,11 @@ export function SignupPage() {
               <FaEye />
             </button>
           </div>
-
-          {/* Terms and Conditions Checkbox */}
           <div className="form-options">
             <label className="terms-label">
               <input type="checkbox" required onChange={(e) => setAgreeTerms(e.target.checked)} /> I agree to the Terms & Conditions
             </label>
           </div>
-
-          {/* Submit Button */}
           <button type="submit" className="signup-submit-btn">
             Register Account
           </button>

@@ -7,15 +7,12 @@ export function NotificationPage() {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true); 
 
-  /* 🔑 DYNAMIC USER LOOKUP FROM BROWSER STORAGE */
   const storedUser = localStorage.getItem('currentUser');
   const user = storedUser ? JSON.parse(storedUser) : null;
   
-  // Dynamic lookup: falls back to an empty string if no user session is found
   const currentUserId = user ? (user._id || user.id) : "";
 
-  useEffect(() => {
-    // 🛡️ SECURITY GUARD LAYER: Blocks broken string representations from hitting your backend server
+  useEffect(() => {    
     if (!currentUserId || currentUserId === "undefined" || currentUserId === "null") {
       setLoading(false);
       return;
@@ -33,9 +30,8 @@ export function NotificationPage() {
       }
     }
     fetchAlerts()
-  }, [currentUserId]) // Automatically refetches if the active login profile shifts
+  }, [currentUserId])
 
-  // 🗑️ Delete single alert from database
   const handleDeleteNotification = async (notificationId) => {
     try {
       const response = await fetch(`http://127.0.0.1:5000/api/notifications/${notificationId}`, {
@@ -48,8 +44,7 @@ export function NotificationPage() {
       console.error("Failed deleting notification:", err)
     }
   }
-
-  // 🧼 Clear all alerts
+ 
   const handleClearAllNotifications = async () => {
     // 🛡️ Guard to ensure we don't accidentally send a broken clear endpoint request
     if (!currentUserId || currentUserId === "undefined" || currentUserId === "null") return;
@@ -66,14 +61,12 @@ export function NotificationPage() {
     }
   }
 
-  // Helper function to pick the correct design icon based on your backend alert types
   const getNotificationIcon = (type) => {
     if (type === 'security') return <FaExclamationCircle />
     if (type === 'alert') return <FaCheckCircle />        
     return <FaInfoCircle />                               
   };
-
-  // Helper function to dynamically map database fields to your layout's explicit CSS type classes
+  
   const getNotificationClass = (alert) => {
     let baseClass = "notification-item";
     baseClass += alert.isRead ? " read-type" : " unread";

@@ -3,8 +3,7 @@ import '../pages/Homepage.css'
 import { Link } from 'react-router-dom'
 import { propertyData } from '../data/properties'
 
-function ForSale() {
-  // Filter out everything except properties for sale
+function ForSale() {  
   const saleProperties = propertyData.filter(house => house.type === 'sale');
 
   return (

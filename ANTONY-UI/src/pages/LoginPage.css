@@ -1,4 +1,3 @@
-/* Universal full-screen wrapper */
 .login-page-wrapper {
   width: 100vw;  
   margin-top: 4rem; 
@@ -11,7 +10,6 @@
   overflow: hidden;
 }
 
-/* Elite card container */
 .login-card {
   width: 30%; 
   height: 80%; 
@@ -36,18 +34,16 @@
   margin-bottom: 1.8rem;
 }
 
-/* Layout stack for form items */
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
 }
 
-/* Individual wrapper inputs blocks */
 .input-group {
-  position: relative; /* Crucial anchor context for positioning child items */
+  position: relative; 
   width: 100%;
-  padding-left: 0.5rem; /* Subtle left padding to visually separate from card edge */
+  padding-left: 0.5rem; 
 }
 
 .input-group input {
@@ -63,23 +59,20 @@
   text-align: center;
 }
 
-/* Highlight border on user focus click */
 .input-group input:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
-/* Extra padding on password text so letters never slide behind the eye icon button */
 .password-group input {
   padding-right: 2.8rem;
 }
 
-/* 🎯 PINNING THE EYE ICON INSIDE THE INPUT FIELD */
 .password-toggle-btn {
   position: absolute;
   right: 12px;
   top: 50%;
-  transform: translateY(-50%); /* Keeps it perfectly locked dead-center vertically */
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: #a0aec0;
@@ -93,10 +86,9 @@
 }
 
 .password-toggle-btn:hover {
-  color: #4a5568; /* Dims darker when hovering over the eye symbol */
+  color: #4a5568;
 }
 
-/* Helper checkbox options bar row */
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -115,7 +107,6 @@
   text-decoration: underline;
 }
 
-/* Submit Action Key styling */
 .login-submit-btn {
   width: 100%;
   padding: 0.85rem;
@@ -134,5 +125,5 @@
 }
 
 .login-submit-btn:active {
-  transform: scale(0.98); /* Faint physical bounce press feedback clicks */
+  transform: scale(0.98); 
 }

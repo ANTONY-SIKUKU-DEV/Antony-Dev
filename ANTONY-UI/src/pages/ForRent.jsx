@@ -1,10 +1,9 @@
 import React from 'react'
-import '../pages/Homepage.css' // Reusing your beautiful homepage grid styles directly!
+import '../pages/Homepage.css' 
 import { propertyData } from '../data/properties'
 import { Link } from 'react-router-dom'
 
-function ForRent() {
-  // Filter out everything except rental listings
+function ForRent() {  
   const rentalProperties = propertyData.filter(house => house.type === 'rent');
 
   return (

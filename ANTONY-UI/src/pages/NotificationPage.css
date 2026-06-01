@@ -18,7 +18,6 @@
   overflow: hidden;
 }
 
-/* Header Action Layout Row */
 .notifications-header {
   display: flex;
   justify-content: space-between;
@@ -66,13 +65,11 @@
   text-decoration: underline;
 }
 
-/* Feed List Stack Container */
 .notifications-feed {
   display: flex;
   flex-direction: column;
 }
 
-/* Individual Alert Item Block */
 .notification-item {
   display: flex;
   gap: 1.25rem;
@@ -87,28 +84,24 @@
   background-color: #f7fafc;
 }
 
-/* Color Coding and Left Accent Border for Unread States */
 .notification-item.unread {
-  background-color: #fafdff; /* Slightly different tint for new alerts */
+  background-color: #fafdff; 
 }
 
 .success-type.unread { border-left: 4px solid #48bb78; }
 .warning-type.unread { border-left: 4px solid #ecc94b; }
 .info-type.unread { border-left: 4px solid #007bff; }
 
-/* Read State (Grayed out) */
 .notification-item.read-type {
   border-left: 4px solid #cbd5e0;
   opacity: 0.75;
 }
 
-/* Icons styling by context category */
 .success-type .notification-icon-wrapper { color: #48bb78; font-size: 1.3rem; }
 .warning-type .notification-icon-wrapper { color: #ecc94b; font-size: 1.3rem; }
 .info-type .notification-icon-wrapper { color: #007bff; font-size: 1.3rem; }
 .read-type .notification-icon-wrapper { color: #a0aec0; font-size: 1.3rem; }
 
-/* Content block text typography */
 .notification-content {
   flex: 1;
   text-align: left;
@@ -134,7 +127,6 @@
   display: block;
 }
 
-/* Clean Context Trash Actions */
 .delete-notification-btn {
   background: none;
   border: none;
@@ -146,5 +138,5 @@
 }
 
 .delete-notification-btn:hover {
-  color: #e53e3e; /* Turns warning red on focus hover actions */
+  color: #e53e3e;
 }

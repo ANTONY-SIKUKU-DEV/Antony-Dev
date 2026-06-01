@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const notificationSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Ties this alert directly to the logged-in User's ID
+    ref: 'User', 
     required: true
   },
   title: {
@@ -16,15 +16,15 @@ const notificationSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ['security', 'system', 'alert'], // Categorizes the alert types
+    enum: ['security', 'system', 'alert'], 
     default: 'system'
   },
   isRead: {
     type: Boolean,
-    default: false // Allows users to mark an alert as read/unread
+    default: false 
   }
 }, {
-  timestamps: true // Automatically captures exactly *when* the alert was triggered!
+  timestamps: true
 });
 
 module.exports = mongoose.model('Notification', notificationSchema);

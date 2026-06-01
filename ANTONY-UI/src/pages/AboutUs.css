@@ -1,6 +1,3 @@
-/* ==========================================
-   🏢 ABOUT US PAGE STYLES
-   ========================================== */
 .about-container {
   padding: 6rem 2rem 4rem 2rem;
   max-width: 900px;
@@ -29,7 +26,6 @@
   margin-bottom: 1rem;
 }
 
-/* 3-Pillars Responsive Layout Grid */
 .about-pillars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -44,7 +40,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* Color-coded feature borders */
 .pillar-design { border-top: 4px solid #e27d24; }
 .pillar-security { border-top: 4px solid #007bff; }
 .pillar-utilities { border-top: 4px solid #28a745; }
@@ -60,7 +55,6 @@
   font-size: 0.95rem;
 }
 
-/* Bottom CTA Callout Panel */
 .about-cta-banner {
   margin-top: 4rem;
   padding: 2rem;

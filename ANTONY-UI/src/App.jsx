@@ -19,8 +19,8 @@ import './App.css'
 function App() {
   return (      
       <div>
-        {<DashboardPage />}
-        <Routes>                      
+      {<DashboardPage />}
+      <Routes>                      
       <Route path="/" element={<Homepage />} />      
       <Route path="/login" element={<LoginPage />} />
       <Route path="/booking" element={<BookingPage />} />

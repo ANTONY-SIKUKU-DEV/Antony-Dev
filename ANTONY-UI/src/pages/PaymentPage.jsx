@@ -74,7 +74,6 @@ export function PaymentPage() {
             </button>
           </form>
         </div>
-
       </div>
     </div>
   )

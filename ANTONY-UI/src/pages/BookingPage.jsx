@@ -33,15 +33,13 @@ export function BookingPage() {
             </select>
           </div>
 
-          {/* Date Picker Split Row */}
-          <div className="form-row">
+           <div className="form-row">
             {/* Preferred Viewing Date */}
             <div className="input-group">
               <span className="input-icon-date"><FaCalendarAlt /></span>
               <input className='date' type="date" required />
             </div>
-
-            {/* Preferred Viewing Time Slot */}
+           
             <div className="input-group select-group">
               <span className="input-icon"><FaClock /></span>
               <select required defaultValue="">
@@ -51,13 +49,11 @@ export function BookingPage() {
               </select>
             </div>
           </div>
-
-          {/* Optional Notes Message Box */}
+          
           <div className="input-group textarea-group">
             <textarea placeholder="Any special requests or details you'd like us to know? (Optional)" rows="4"></textarea>
           </div>
-
-          {/* Submit Action Key */}
+         
           <button type="submit" className="booking-submit-btn">
             Confirm Booking Slot
           </button>
