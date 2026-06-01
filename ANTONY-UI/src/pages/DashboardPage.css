@@ -1,88 +1,142 @@
-.Dashboard{
-    Display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position:fixed;
-    column-gap: 2.5rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    background-color: transparent; 
-    z-index: 1000;
+.Dashboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding: 0 2rem;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-sizing: border-box;
 }
+
+/* This targets whatever page container comes immediately after the fixed Dashboard */
+.Dashboard + div, 
+.Dashboard + main, 
+.Dashboard + .home-outer-container,
+.Dashboard + .login-page-wrapper,
+.Dashboard + .signup-page-wrapper,
+.Dashboard + .notifications-page-wrapper,
+.Dashboard + .payment-page-wrapper {
+  padding-top: 90px; 
+  box-sizing: border-box;
+}
+
 .Antony {
-    display: flex;
-    flex-direction: row;
-    column-gap: 1rem;
-    align-items: center;
-    justify-content: center;    
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  align-items: center;
 }
+
+.Antony h1 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin: 0;
+  font-weight: 600;
+}
+
 .Antony input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;     
+  padding: 0.6rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
+
+.Antony input:focus {
+  border-color: #007bff;
+}
+
 .Buttons {
-    display: flex;
-    flex-direction: row;
-    column-gap: 0.6rem;
-    align-items: center;
-    justify-content: center; 
-    color: #FEFEFE;    
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.3rem;
+  align-items: center;
 }
+
 .Buttons button {
-    padding: 0.3rem 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: transparent;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+
 .Buttons button:hover {
-    background-color: #007bff;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
 }
+
 .Buttons button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
+  transform: scale(0.96);
 }
 
 @media (max-width: 768px) {
-    .Dashboard {        
-        position: fixed; 
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 0.8rem;
-        background-color: #ffffff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+  .Dashboard {        
+    position: static; 
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
 
-    .Antony {
-        width: 100%;
-        justify-content: space-between; 
-        gap: 0.5rem;
-    }
+  /* Removes the extra top space on mobile since position is static and stacks naturally */
+  .Dashboard + div, 
+  .Dashboard + main, 
+  .Dashboard + .home-outer-container,
+  .Dashboard + .login-page-wrapper,
+  .Dashboard + .signup-page-wrapper,
+  .Dashboard + .notifications-page-wrapper,
+  .Dashboard + .payment-page-wrapper {
+    padding-top: 0; 
+  }
 
-    .Antony input {
-        width: 140px;
-        font-size: 0.85rem;
-        padding: 0.4rem;
-    }
+  .Antony {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
 
-    .Buttons {
-        width: 100%;
-        flex-wrap: wrap; 
-        column-gap: 0.5rem;
-        row-gap: 0.4rem;
-    }
+  .Antony input {
+    flex: 1;
+    max-width: 200px;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
 
-    .Buttons button {
-        padding: 0.4rem 0.5rem;
-        font-size: 0.85rem;
-    }
+  .Buttons {
+    width: 100%;
+    flex-wrap: wrap; 
+    justify-content: center;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .Buttons button {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+  }
+  
+  .Buttons button:hover {
+    box-shadow: none;
+  }
 }
