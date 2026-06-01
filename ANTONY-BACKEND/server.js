@@ -235,10 +235,7 @@ app.post('/api/change-password', async (req, res) => {
   }
 });
 
-const PORT = 5000; 
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`📡 Server actively streaming locally on http://localhost:${PORT}`);
-  });
-}
-module.exports = app;
+const PORT = process.env.PORT || 5000; 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`📡 Server actively streaming on port ${PORT}`);
+});
