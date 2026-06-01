@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-const Notification = require('./models/Notification');
+const Notification = require('./models/notification');
 const User = require('./models/User');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
